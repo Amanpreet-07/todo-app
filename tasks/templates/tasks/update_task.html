@@ -1,0 +1,54 @@
+<style>
+    body {
+        background-color: #638CB8;
+    }
+    
+    .center-column {
+        width: 300px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .container {
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .container .btn-holder {
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    input[type=submit] {
+        background-color: #638CB8;
+        border: solid black;
+        padding: 5px 10px;
+    }
+    
+    .ss {
+        text-align: center;
+    }
+</style>
+<div class="center-column">
+    <h3 style="text-align:center;background-color:#638CB8;padding:5px 5px;">Update Task</h3>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div style="background-color:#638CB8; padding:10px 10px; ">
+
+            <div style="margin-bottom: 10px; ">{{form.title.label}}: {{form.title}}</div>
+
+            <div style="margin-bottom: 10px; ">{{form.complete.label}}{{form.complete}}</div>
+
+        </div>
+        <br>
+        <div class="ss">
+            <input type="submit" name="Update Task" value="update">
+        </div>
+
+    </form>
+</div>

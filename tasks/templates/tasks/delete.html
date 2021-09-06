@@ -1,0 +1,50 @@
+<style>
+    body {
+        background-color: #638CB8;
+    }
+    
+    .center-column {
+        width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        box-shadow: 6px 2px 30px 0px rgba(0, 0, 0, 0.75);
+    }
+    
+    .container {
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+    }
+    
+    .container .btn-holder {
+        justify-content: flex-end;
+        display: flex;
+    }
+    
+    .ap {
+        background-color: red;
+        color: white;
+        padding: 8px 8px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+</style>
+<div class="center-column">
+    <h4>Are you sure you want to delete "{{item}}"?</h4>
+
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="container">
+            <div class="btn-holder">
+                <a class="ap" style="margin-right: 10px;border:black" href="{% url 'list' %} ">Cancel</a>
+                <input type="submit" name="confirm" value="Confirm">
+            </div>
+        </div>
+
+    </form>
+</div>
